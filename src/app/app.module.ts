@@ -18,7 +18,12 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
-  declarations: [AppComponent, ArticlesComponent, MainComponent, ArticleComponent],
+  declarations: [
+    AppComponent,
+    ArticlesComponent,
+    MainComponent,
+    ArticleComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
