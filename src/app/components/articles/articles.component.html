@@ -1,0 +1,13 @@
+<div class="articles" *ngFor="let article of articles">
+  <nb-card [id]="article.id" size="small">
+    <nb-card-header>
+      {{ article.title }}
+    </nb-card-header>
+    <nb-card-body>
+      {{ article.description }}
+      <a [router-link]="[article, article.id]"> read more... </a>
+      <img [src]="article.cover_image" alt="" />
+    </nb-card-body>
+    <nb-card-footer>{{ article.user.name }}</nb-card-footer>
+  </nb-card>
+</div>
