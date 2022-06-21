@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
+import { NbSidebarService } from '@nebular/theme';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { NbMenuItem } from '@nebular/theme';
 })
 export class AppComponent {
   title = 'Angular boilerplate';
+
+  constructor(private sidebarService: NbSidebarService) {}
 
   items: NbMenuItem[] = [
     {
@@ -21,4 +24,8 @@ export class AppComponent {
       link: 'articles',
     },
   ];
+
+  toggle() {
+    this.sidebarService.toggle(false, 'left');
+  }
 }

@@ -13,6 +13,7 @@ import {
   NbButtonModule,
   NbMenuModule,
   NbCardModule,
+  NbIconModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ArticleComponent } from './components/article/article.component';
@@ -38,6 +39,7 @@ import { CardComponent } from './components/card/card.component';
     NbButtonModule,
     NbMenuModule.forRoot(),
     NbCardModule,
+    NbIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
