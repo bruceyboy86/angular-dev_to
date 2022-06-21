@@ -7,7 +7,7 @@ import { NbMenuItem } from '@nebular/theme';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angular-boilerplate';
+  title = 'Angular boilerplate';
 
   items: NbMenuItem[] = [
     {

@@ -1,2 +1,14 @@
-<p>article works!</p>
-{{ article | json }}
+<h1>{{ article.title }}</h1>
+<article>
+  <figure>
+    <div *ngIf="!!article.cover_image; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <img [src]="article.cover_image" [alt]="article.title" />
+    </ng-template>
+    <ng-template #elseBlock>
+      <img src="https://picsum.photos/600/500" [alt]="article.title" />
+    </ng-template>
+    <figcaption>Cover art for {{ article.title }}</figcaption>
+  </figure>
+  {{ article.body_markdown }}
+</article>

@@ -5,7 +5,16 @@
   <nb-card-body>
     <p>{{ description }}</p>
     <a [routerLink]="[id]">read more...</a>
-    <img [src]="img" alt="" />
+
+    <div *ngIf="!!img; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <img [src]="img" [alt]="title" />
+    </ng-template>
+    <ng-template #elseBlock>
+      <img src="https://picsum.photos/600/500" [alt]="title" />
+    </ng-template>
+
+    <!-- <img [src]="img" alt="" /> -->
   </nb-card-body>
   <nb-card-footer>{{ userName }}</nb-card-footer>
 </nb-card>
