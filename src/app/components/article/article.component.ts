@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -7,12 +8,17 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent implements OnInit {
-  constructor(private http: HttpService) {}
+  constructor(
+    private http: HttpService,
+    private activatedRoute: ActivatedRoute
+  ) {}
   article: any;
-  // @Input() id: Number;
+  // id: string | null;
+
   ngOnInit(): void {
-    // this.http.getArticle(id).subscribe((res) => {
-    //   this.article = res;
-    // });
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.http.getArticle(id).subscribe((res) => {
+      this.article = res;
+    });
   }
 }

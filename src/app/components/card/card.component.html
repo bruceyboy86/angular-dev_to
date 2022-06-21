@@ -1,0 +1,11 @@
+<nb-card [id]="id" size="small">
+  <nb-card-header>
+    {{ title }}
+  </nb-card-header>
+  <nb-card-body>
+    <p>{{ description }}</p>
+    <a [routerLink]="[id]">read more...</a>
+    <img [src]="img" alt="" />
+  </nb-card-body>
+  <nb-card-footer>{{ userName }}</nb-card-footer>
+</nb-card>

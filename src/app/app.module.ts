@@ -16,6 +16,7 @@ import {
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ArticleComponent } from './components/article/article.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ArticleComponent } from './components/article/article.component';
     ArticlesComponent,
     MainComponent,
     ArticleComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

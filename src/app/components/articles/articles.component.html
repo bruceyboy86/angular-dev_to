@@ -1,17 +1,10 @@
-<!-- this routerlink can't be used as a directive in a for loop. 
-use it inside another component to hold the cards -->
-<a [routerLink]="['/home']">home</a>
-
 <div class="articles">
-  <nb-card *ngFor="let article of articles" [id]="article.id" size="small">
-    <nb-card-header>
-      {{ article.title }}
-    </nb-card-header>
-    <nb-card-body>
-      <p>{{ article.description }}</p>
-      <!-- <a [router-link]="['article/', article.id]"> read more... </a> -->
-      <img [src]="article.cover_image" alt="" />
-    </nb-card-body>
-    <nb-card-footer>{{ article.user.name }}</nb-card-footer>
-  </nb-card>
+  <app-card
+    *ngFor="let article of articles"
+    [id]="article.id"
+    [title]="article.title"
+    [description]="article.description"
+    [img]="article.cover_image"
+    [userName]="article.user.name"
+  ></app-card>
 </div>
